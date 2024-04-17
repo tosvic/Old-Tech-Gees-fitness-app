@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --bg-color: #191919;
+    --text-color: #fff;
+    --white-color: #FFFFFF;
+    --shadow-color: rgba(0, 0, 0, 0.308);
+    --font: Poppins;
+    --button: #191919;
+}
+
+
+.main-font{
+    font-family: var(--font);
+}
+
+.glow {
+     transform: all 0.3s ease-in-out;
+}
+
+.glow:hover {
+    box-shadow: 0 0 20px var(--button);
+}
+
+.img_glow {
+    box-shadow: 0 0 100px var(--button);
+}
+
+.img_glow:hover {
+    box-shadow: 0 0 100px var(--bg-color);
+}
+
+.neno-button{
+
+    transform:  all 0.3s ease-in-out;
+}
+
+.neno-button:hover {
+    box-shadow: 0 0 15px var(--button);
+}
+
+.b_glow {
+    box-shadow: 0 0 15px var(--button);
+}

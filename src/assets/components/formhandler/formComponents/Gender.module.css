@@ -1,0 +1,85 @@
+
+.main{
+    height: 80vh;
+    background-color:black;  
+}
+
+.text{
+
+    padding: 4em;
+}
+
+.tellUs{
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.better{
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding-top: 1em;
+
+}
+
+
+.picCont{
+    display: grid;
+	place-items: center;
+
+}
+
+.circle{
+    height: 12em;
+    width: 12em;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+    border-radius: 10em;
+    background-color: red;
+}
+
+.maleIcon{
+    color: white;
+    font-size: 4em;
+    align-items: center;
+    padding-top: 0.2em;
+}
+
+.male{
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 4px;
+
+}
+
+.circle2{
+    height: 12em;
+    width: 12em;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+    border-radius: 10em;
+    background-color: gray;
+    margin-top: 1em;
+
+}
+
+.femaleIcon{
+    color: white;
+    font-size: 3.5em;
+    text-align: center;
+    padding-top: 7px;
+}
+
+.female{
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 4px;
+}

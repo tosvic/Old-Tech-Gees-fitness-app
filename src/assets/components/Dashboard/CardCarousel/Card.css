@@ -1,0 +1,38 @@
+
+
+.card-slider-container{
+    padding: 1px;
+    border-radius: 10px;
+    border-top: .5px solid white ;
+    border-bottom: .5px solid white ;
+    height: 300px;
+    width: 200px;
+    /* height: 300px; */
+    margin-right: 22px;
+    margin-left: 22px;
+    
+}
+.card{
+    border-radius: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position:center center;
+    background-color: var(--color-card);
+    /* width: ; */
+    height: 300px; 
+    /* color: white; */
+}
+.card .detailsection{
+    text-align: center;
+}
+.slick-dots li button{
+    color:  white;
+}
+.viewAll{
+    margin-top: 15px;
+    align-self: flex-end;
+    justify-content: left;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+}

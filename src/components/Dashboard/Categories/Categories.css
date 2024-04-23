@@ -1,0 +1,52 @@
+
+.subnavTitles{
+  background-image: url(./images/skillLevel.png);
+  background-size:250px;
+  background-repeat: no-repeat;
+  background-position-x: center;
+    margin-right: 15px;
+    padding-top: 5px;
+    border-radius: 10px;
+    box-shadow:  2px 2px 17px 10px var(--sidebar-background) ;
+    display: flex;
+  }
+#subnavlinks{
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  font-weight: 500;
+  transition: .5s;
+}
+#subnavlinks:hover{
+  padding: 5px;
+  height: 30px;
+  border-radius: 10PX;
+  background-color: #e73600da;
+  color: #ffffff;
+}
+.active{
+  text-align: center;
+  justify-content:  center;
+  position: relative;
+  /* top: 10px; */
+  height: 30px;
+  border-radius: 10PX;
+  background-color: #e73600da;
+  color: #ffffff;
+} 
+
+.TitlesnList{
+  margin: 0px 25px;
+}
+.lists{
+  margin-top: 20px;
+  list-style: none;
+}
+.list{
+  cursor: pointer;
+  margin-top: 15px;
+  transition: .4s;
+}
+.list:hover{
+  color: #e73600da;
+}

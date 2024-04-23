@@ -1,0 +1,13 @@
+.chatContainer{
+    position: relative;
+
+}
+
+.chatMessage{
+    position: absolute;
+    background-color: var(--color-card);
+    padding: 10px;
+    border-radius: 5px;
+    border:  1px solid #ccc;
+    transition:  transform .5s ease;
+}

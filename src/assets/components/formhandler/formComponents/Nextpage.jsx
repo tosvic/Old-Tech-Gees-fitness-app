@@ -5,7 +5,7 @@ const Nextpage = () => {
   return (
     <>
     <h1>Next page</h1>
-    <Link to='/nextpage'></Link>
+    <Link to='nextpage'></Link>
     </>
   )
 }

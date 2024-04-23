@@ -13,7 +13,7 @@ const Login = () => {
 
   const navigate = useNavigate
   return (
-    <div>
+    <div className='login'>
       <h1>Welcome to Login</h1>
       <div className='border'>
         <h2 id='Head'>Login</h2>

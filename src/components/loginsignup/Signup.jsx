@@ -11,7 +11,7 @@ const Signup = ({ onSignUp }) => {
   };
 
   return (
-    <div>
+    <div className='signup'>
       <h1>Welcome</h1>
       <div>
         <h2>Sign Up</h2>

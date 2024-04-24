@@ -3,21 +3,40 @@ import styles from "./Form.module.css"
 
 const Form = () => {
 
-  const DataContext = useContext()
+   const DataContext = useContext()
  const DataProvider=({children})=>{
-  const[formData, setformData] = useState([]
+  const[formData, setformData] = useState({
+    name: 'nickname',
+    height: "height",
+    age:"age",
+    weight:"weight",
+    goal:"goal",
+    regular:"regular"  
+ }
   )
-  const addData = (data)=>{
-    setformData([...formData, data])
+   const addData = (name, value)=>{
+    setformData(prevData =>({
+        ...prevData, 
+        [name]: value
+    }))
+
     return(
-      <DataContext/>
+      <DataContext.Provider value={{formData, setformData}}>
+      {children}
+      </DataContext.Provider>
     )
   }
+}
+
+   const useData=()=>{
+    useContext(DataContext)
 }
 
   const [height, setHeight] = useState(0);
   const [age, setAge] = useState(0);
   const [weight, setWeight] = useState(0);
+  const[goal, setGoal]= useState("")
+  const[regular, setRegular]= useState("")
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -43,7 +62,9 @@ const Form = () => {
     console.log('Submitted data:', name, height, age);
     setName('');
     setHeight(0);
-    setAge(0);
+    setAge(1);
+    setGoal("");
+    setRegular('')
   };
 
 
@@ -94,6 +115,7 @@ const Form = () => {
       <input
         type="text"  
         id="goal"
+        name="goal"
         onChange={handleChange}
         className={styles.input}
       />

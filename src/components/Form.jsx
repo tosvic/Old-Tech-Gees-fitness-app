@@ -1,37 +1,39 @@
 import React,{createContext, useContext, useState} from 'react';
 import styles from "./Form.module.css"
 
+export  const DataContext = useContext()
+const DataProvider=({children})=>{
+const[formData, setformData] = useState({
+ name: 'nickname',
+ height: "height",
+ age:"age",
+ weight:"weight",
+ goal:"goal",
+ regular:"regular"  
+}
+)
+const addData = (name, value)=>{
+ setformData(prevData =>({
+     ...prevData, 
+     [name]: value
+ }))
+
+ return(
+   <DataContext.Provider value={{formData, setformData}}>
+   {children}
+   </DataContext.Provider>
+ )
+}
+}
+
+ export const useData=()=>{
+ useContext(DataContext)
+}
+
+
+
 const Form = () => {
-
-   const DataContext = useContext()
- const DataProvider=({children})=>{
-  const[formData, setformData] = useState({
-    name: 'nickname',
-    height: "height",
-    age:"age",
-    weight:"weight",
-    goal:"goal",
-    regular:"regular"  
- }
-  )
-   const addData = (name, value)=>{
-    setformData(prevData =>({
-        ...prevData, 
-        [name]: value
-    }))
-
-    return(
-      <DataContext.Provider value={{formData, setformData}}>
-      {children}
-      </DataContext.Provider>
-    )
-  }
-}
-
-   const useData=()=>{
-    useContext(DataContext)
-}
-
+    const{FormData, setformData} = useData()
   const [height, setHeight] = useState(0);
   const [age, setAge] = useState(0);
   const [weight, setWeight] = useState(0);
@@ -75,7 +77,7 @@ const Form = () => {
         type="text"
         id="name"
         name="name"
-        value={name}
+        value={FormData.name}
         onChange={handleChange}
         className={styles.input}
       />
@@ -85,7 +87,7 @@ const Form = () => {
         type="number"
         id="height"
         name="height"
-        value={height}
+        value={ FormData.height}
         onChange={handleChange}
         className={styles.input}
       />
@@ -95,7 +97,7 @@ const Form = () => {
         type="number"
         id="age"
         name="age"
-        value={age}
+        value={FormData.age}
         onChange={handleChange}
         className={styles.input}
       />
@@ -105,7 +107,7 @@ const Form = () => {
         type="number"
         id="weight"
         name="weight"
-        value={weight}
+        value= {FormData.weight}
         onChange={handleChange}
         className={styles.input}
         
@@ -115,7 +117,7 @@ const Form = () => {
       <input
         type="text"  
         id="goal"
-        name="goal"
+        name= " formData.goal"
         onChange={handleChange}
         className={styles.input}
       />
@@ -124,7 +126,7 @@ const Form = () => {
       <input
         type="text" 
         id="regular"
-        name="regular"
+        name=" formData.regular"
         onChange={handleChange}
         className={styles.input}
       />

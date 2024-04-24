@@ -7,10 +7,13 @@ import Landingpage from './components/Landingpage';
 import Login from './components/loginsignup/Login';
 import MainLayout from './components/Dashboard/MainLayout';
 import Form from './components/Form';
+import {DataProvider} from './components/Form'
+
 
 const App = () => {
   return (
-    <Router>
+    <DataProvider>
+      <Router>
       <Routes>
         <Route path='/' element={<Landingpage />} />
         <Route path="/Splash" element={<Splash />} />
@@ -18,10 +21,13 @@ const App = () => {
         <Route path="/Landing/Signup" element={<Signup />} />
         <Route path="/Landing/Form" element={<Form/>}/>
         <Route path="/Landing/Login" element={<Login />} /> 
+
         <Route path="/Landing/Login/MainLayout" element={<MainLayout />} />
 
       </Routes>
     </Router>
+    </DataProvider>
+    
   );
 };
 

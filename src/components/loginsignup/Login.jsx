@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // For navigation after login
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -8,15 +8,13 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Implement login logic (e.g., authenticate with backend)
-    // If successful, navigate to dashboard
     navigate('/Dashboard');
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <form className="w-full max-w-sm bg-white p-4 rounded shadow-md" onSubmit={handleLogin}>
-        <h2 className="text-2xl font-bold text-center mb-4">Login</h2>
+    <div className="flex justify-center items-center h-screen bg-black bg-[url(/src/assets/img/alex.png)] max-md:bg-right bg-cover">
+      <form className="w-full max-w-sm bg-slate-100 p-4 rounded shadow-md" onSubmit={handleLogin}>
+        <h2 className="text-2xl font-bold text-center  mb-4">Login</h2>
         <div className="mb-4">
           <label htmlFor="username" className="block text-sm font-medium mb-2">Username</label>
           <input type="text" id="username" placeholder="Enter Username/Email" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-button" value={username} onChange={(e) => setUsername(e.target.value)} />

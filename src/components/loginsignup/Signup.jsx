@@ -1,49 +1,91 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // For navigation after login
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
-  const [username, setUsername] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();
+  
 
-  const handleLogin = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Implement login logic (e.g., authenticate with backend)
-    // If successful, navigate to login
-    navigate('/Login');
+
+    
+    // Reset form after successful submission (optional)
+    setFullName('');
+    setPhone('');
+    setEmail('');
+    setPassword('');
   };
 
+  const navigate =useNavigate()
+
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
-      <form className="w-full max-w-sm bg-white p-4 rounded shadow-md" onSubmit={handleLogin}>
-        <h2 className="text-2xl font-bold text-center mb-4">Sign-Up</h2>
-        
+    <div className="container h-screen mx-auto px-4 py-8 bg-[url(/src/assets/img/banner.jpg)] bg-no-repeat max-md:bg-right bg-cover">
+      <h2 className="text-2xl font-bold mb-4 text-center pt-20 text-white">Sign Up</h2>
+      <form className='w-80' onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label htmlFor="username" className="block text-sm font-medium mb-2">Name</label>
-          <input type="text" id="username" placeholder="Enter Name" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-500" value={username} onChange={(e) => setUsername(e.target.value)} />
+          <label htmlFor="fullName" className="block text-sm font-medium mb-2 text-white">
+            Full Name
+          </label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1"
+            required
+          />
         </div>
-
         <div className="mb-4">
-          <label htmlFor="username" className="block text-sm font-medium mb-2">Surname</label>
-          <input type="text" id="username" placeholder="Enter Surname" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-button" value={username} onChange={(e) => setUsername(e.target.value)} />
+          <label htmlFor="phone" className="block text-sm font-medium mb-2 text-white">
+            Phone Number
+          </label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1"
+          />
         </div>
-
         <div className="mb-4">
-          <label htmlFor="username" className="block text-sm font-medium mb-2">Username</label>
-          <input type="text" id="username" placeholder="Enter Surname" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-button" value={username} onChange={(e) => setUsername(e.target.value)} />
+          <label htmlFor="email" className="block text-sm font-medium mb-2 text-white">
+            Email Address
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1"
+            required
+          />
         </div>
-        
-        <div className="mb-6">
-          <label htmlFor="password" className="block text-sm font-medium mb-2">Password</label>
-          <input type="password" id="password" placeholder="Enter Password" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-button" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <div className="mb-4">
+          <label htmlFor="password" className="block text-sm font-medium mb-2 text-white">
+            Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1"
+            required
+          />
         </div>
-
-        <div className="mb-6">
-          <label htmlFor="password" className="block text-sm font-medium mb-2">Confirm Password</label>
-          <input type="password" id="password" placeholder="Confirm Password" className="w-full px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-1 focus:ring-button" value={password} onChange={(e) => setPassword(e.target.value)} />
-        </div>
-
-        <button type="submit" className="w-40 px-3 py-2 text-white bg-button rounded-md hover:bg-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-button">Submit</button>
+        <button onClick={()=>navigate('./Login')}
+          type="submit"
+          className="w-24 bg-button hover:bg-black text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2"
+        >
+          Sign Up
+        </button>
       </form>
     </div>
   );

@@ -3,6 +3,8 @@ import { Link } from "react-scroll"
 import { FaTimes } from "react-icons/fa"
 import { CiMenuFries } from "react-icons/ci"
 import { useNavigate } from "react-router-dom";
+import log from '../assets/img/logo2.png'
+
 
 function Nav() {
 
@@ -30,7 +32,7 @@ function Nav() {
             <li className="my-4 py-4 border-b border-slate-800 hover:bg-button hover:text-black hover:rounded">Articles</li>
           </Link>
 
-          <Link onClick={()=>navigate('./Signup')} spy={true} smooth={true} to="Contact">
+          <Link onClick={()=>navigate('/Splash')} spy={true} smooth={true} to="Contact">
             <li  className="my-4 py-4 border-b border-slate-800 hover:bg-button hover:text-black hover:rounded">Download App</li>
           </Link>
         </ul>
@@ -45,7 +47,7 @@ function Nav() {
       <div className="w-full fixed h-30 flex items-center justify-betwee lg:py-5 px-20 py-8 bg-black text-white">
         
         <div className="flex-1">
-          <a href="" className="text-md text-button font-bold tracking-[.3rem]">Vitality <br /> logo</a>
+          <a href="" className="text-sm text-button font-bold tracking-[.3rem]"> <img className="w-20" src={log} alt="" /></a>
         </div>
 
         <div className="text-text-color lg:flex md:flex flex-1  justify-end  hidden">

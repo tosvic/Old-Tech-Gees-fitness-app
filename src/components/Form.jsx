@@ -2,7 +2,7 @@ import React,{createContext, useContext, useState} from 'react';
 import styles from "./Form.module.css"
 
 export  const DataContext = useContext()
-const DataProvider=({children})=>{
+export const DataProvider=({children})=>{
 const[formData, setformData] = useState({
  name: 'nickname',
  height: "height",

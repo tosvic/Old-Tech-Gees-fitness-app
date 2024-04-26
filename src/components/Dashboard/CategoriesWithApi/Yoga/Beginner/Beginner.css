@@ -1,0 +1,18 @@
+
+.videoFeedsContainer{
+    display:  flex;
+    /* border: 1px solid white; */
+    /* flex-direction: column; */
+}
+
+
+.item{
+    /* border: 1px solid white; */
+    margin: 2px;
+  }
+.giffs{
+    position: relative;
+    /* top: -10%; */
+    width: 200px;
+    border-radius: 10px;
+  }

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import '../DailyWorkOut/DailExcercise.css'
 // import QuickWarmUp from './videos/QuickWarmUp.mp4'
 // import DayOneWorkOut from './videos/DayOneWorkOut.mp4'
-import HamstringWprkout from './videos/HamstringWprkout.mp4'
-import ladyWorkOut from './images/ladyWorkOut.jpg'
+import '../DailyWorkOut/DailExcercise.css';
+import HamstringWprkout from './videos/HamstringWprkout.mp4';
+import ladyWorkOut from './images/ladyWorkOut.jpg';
 import { CiPlay1 } from "react-icons/ci";
 
 
-const DailyExcercise = ()=>{
+const DailyExcercise = ({feeds})=>{
     const cuurrentDate  = new Date().toLocaleDateString();
 
     const [loaded, setLoaded] =useState(false); 
@@ -30,8 +30,8 @@ const DailyExcercise = ()=>{
                     showVideo ?
                         <div className="dailyWorkoutContainer">
                                 <div className="Title">
-                                <h3 className="hero"> Today's Workout Plan </h3>
-                                <h4 className="CurrentDate"> {cuurrentDate} </h4>
+                                <h3 className="hero"> {feeds} </h3>
+                                {/* <h4 className="CurrentDate"> {cuurrentDate} </h4> */}
                             </div>
                             <div className="DailyWorkoutbanner">
                                     <img src={ladyWorkOut} alt="Picture of lady squarting" className="imageBanner" />
@@ -45,7 +45,7 @@ const DailyExcercise = ()=>{
                         <div className="dailyWorkoutContainer">
                             <div className="Title">
                                 <h3 className="hero"> Today's Workout Plan </h3>
-                                <h4 className="CurrentDate"> {cuurrentDate} </h4>
+                                {/* <h4 className="CurrentDate"> {cuurrentDate} </h4> */}
                             </div>
                             <div className="DailyWorkoutbanner">
                                  <div className="videoContainer">
@@ -57,7 +57,6 @@ const DailyExcercise = ()=>{
                                  </div>
                             </div>
                         </div> 
-                        
                     }
             </div>
             

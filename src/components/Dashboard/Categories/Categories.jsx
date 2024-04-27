@@ -1,6 +1,7 @@
 import React, { useState } from "react";  
 import skillLevel from './images/skillLevel.png'
 import '../Categories/Categories.css'
+import { Link } from "react-router-dom";
 const Categories = ()=>{
 
         const [ selectedList, setSelectedList] = useState(null);
@@ -13,7 +14,15 @@ const Categories = ()=>{
             setSelectedList(ListId);
         }
    
-
+        // const LinkHandler =  ()=>{
+        //     if(i ===  1){
+        //         return <Link to={'/MainLayout/Yoga/Beginner'} smooth={true} > {item} </Link>
+        //     }else if(i ===  2){
+        //         return <Link to={'/MainLayout/Yoga/Intermediate'} smooth={true} > {item} </Link>
+        //     }else if(i ===  2){
+        //         return <Link to={'/MainLayout/Yoga/Advance'} smooth={true} > {item} </Link>
+        //     }
+        // }
     return(
         <>
             <div className="subnavTitles" style={{ backgroundImage: {skillLevel}}}>
@@ -25,7 +34,10 @@ const Categories = ()=>{
                             selectedList === 1 &&(
                                 <ul className="lists">
                                     {YogaLevel.map((item, i)=>(
-                                        <li key={i} className="list">{item}</li>
+                                        <li key={i} className="list">
+                                            <Link to={'MainLayout/Beginner'} smooth={true} > {item} </Link>
+                                            {/* {  ()=>LinkHandler(i)} */}
+                                        </li>
                                     ))
                                     }
                                 </ul>

@@ -1,63 +1,24 @@
 import React from 'react'
 import "./mainlayout.css"
-import SideNav from '../Dashboard/navigations/side/SideNav'
-import TopNav from '../Dashboard/navigations/top/TopNav'
-import TrainerOne from './CardCarousel/cardimg/Coach1.png'
-import DailyExcercise from '../Dashboard/DailyWorkOut/DailyExcercise'
-import ChatTwo from './chatFolder/ChatTwo.jsx'
-import Categories from '../Dashboard/Categories/Categories'
-// import { Outlet } from 'react-router-dom'
-// import Admin from '../pages/Admin'
-// import Beginner from './CategoriesWithApi/Yoga/Beginner/Beginner.jsx'
-// import ModalOne from './CategoriesWithApi/Yoga/Beginner/ModalOne.jsx'
-// import AerobicsCard from '../Dashboard/CardCarousel/AerobicsCard'
-// import { PiChartLineDownDuotone } from 'react-icons/pi'
+
+import { Outlet } from 'react-router-dom'
 
 
 
-const Aerobics = [
-  { title: 'Aerobics Trainer', image: TrainerOne, trainerName: 'Trainer1', backgroundColor: 'var(--color-card)' },
-  { title: 'Aerobics Trainer', image: TrainerOne, trainerName: 'Trainer2', backgroundColor: 'var(--color-card2)' },
-  { title: 'Aerobics Trainer', image: TrainerOne, trainerName: 'Trainer3', backgroundColor: 'var(--color-card)' },
-  { title: 'Aerobics Trainer', image: TrainerOne, trainerName: 'Trainer4', backgroundColor: 'var(--color-card2)' }
-]
-const YogaTrainer = [
-  { title: 'yoga Trainer', image: TrainerOne, trainerName: 'Trainer1', backgroundColor: 'var(--color-card)' },
-  { title: 'Yoga Trainer', image: TrainerOne, trainerName: 'Trainer2', backgroundColor: 'var(--color-card2)' },
-  { title: 'yoga Trainer', image: TrainerOne, trainerName: 'Trainer3', backgroundColor: 'var(--color-card)' },
-  { title: 'yoga Trainer', image: TrainerOne, trainerName: 'Trainer4', backgroundColor: 'var(--color-card2)' }
-]
-const AnaerobicsTrainer = [
-  { title: 'Anaerobics Trainer', image: TrainerOne, trainerName: 'Trainer1', backgroundColor: 'var(--color-card)' },
-  { title: 'Anaerobics Trainer', image: TrainerOne, trainerName: 'Trainer2', backgroundColor: 'var(--color-card2)' },
-  { title: 'Anaerobics Trainer', image: TrainerOne, trainerName: 'Trainer3', backgroundColor: 'var(--color-card)' },
-  { title: 'Anaerobics Trainer', image: TrainerOne, trainerName: 'Trainer4', backgroundColor: 'var(--color-card2)' }
-]
+
 const MainLayout = () => {
   return (
     <>
       <div id='layout'>
         <div id='side-nav'>
-          <SideNav />
+          {/* <SideNav /> */}
         </div>
         <div id='display'>
-          <TopNav />
+          {/* <TopNav /> */}
           <div className="bodyContent">
-            <div className="firstRow flex max-md:flex-col gap-12 items-center pt-32">
-              <ChatTwo />
-              <Categories />
-            </div> 
-            {/* <AerobicsCard cards={Aerobics} className="YogaSlider"/> */}
-          </div>
-
-          <div className='flex mt-60 max-md:flex-col' >
-          <DailyExcercise  feeds= "Popular Feeds"/>
-          <DailyExcercise />
-          <DailyExcercise />
-
-          {/* <Beginner/> */}
-          {/* <ModalOne/> */}
-          {/* </div> */}
+          
+              <Outlet/>
+         
         </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";  
 import skillLevel from './images/skillLevel.png'
 import '../Categories/Categories.css'
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 const Categories = ()=>{
 
         const [ selectedList, setSelectedList] = useState(null);
@@ -35,7 +35,12 @@ const Categories = ()=>{
                                 <ul className="lists">
                                     {YogaLevel.map((item, i)=>(
                                         <li key={i} className="list">
-                                            <Link to={'MainLayout/Beginner'} smooth={true} > {item} </Link>
+                                            {
+                                                i === 0 ? <Link to={'MainLayout/Yoga/Beginner'} smooth={true} > {item} </Link>
+                                                :(i === 1? <Link to={'MainLayout/Yoga/Inter'} smooth={true} > {item} </Link>
+                                                :  (i === 2 ? <Link to={'YogaAdvanced'} smooth={true} > {item} </Link>: null))  
+                                            }
+                                            {/* <Link to={'MainLayout/Beginner'} smooth={true} > {item} </Link> */}
                                             {/* {  ()=>LinkHandler(i)} */}
                                         </li>
                                     ))
@@ -53,7 +58,13 @@ const Categories = ()=>{
                         selectedList === 2 &&(
                             <ul className="lists">
                                 {AerobicsLevel.map((item, i)=>(
-                                    <li key={i} className="list">{item}</li>
+                                    <li key={i} className="list">
+                                        {
+                                            i === 0 ? <Link to={'/dashboard/aerobic/beginner'} smooth={true} > {item} </Link>
+                                            :(i === 1? <Link to={'/dashboard/aerobic/intermediate'} smooth={true} > {item} </Link>
+                                            :  (i === 2 ? <Link to={'/dashboard/aerobic/advanced'} smooth={true} > {item} </Link>: null))  
+                                        }
+                                    </li>
                                 ))
                                 }
                             </ul>
@@ -67,7 +78,13 @@ const Categories = ()=>{
                         selectedList === 3 &&(
                             <ul className="lists">
                                 {AnaerobicsLevel.map((item, i)=>(
-                                    <li key={i} className="list">{item}</li>
+                                    <li key={i} className="list">
+                                        {
+                                            i === 0 ? <Link to={'/aerobic/advanced'} smooth={true} > {item} </Link>
+                                            :(i === 1? <Link to={'/aerobic/beginner'} smooth={true} > {item} </Link>
+                                            :  (i === 2 ? <Link to={'/aerobic/intermediate'} smooth={true} > {item} </Link>: null))  
+                                        }    
+                                    </li>
                                 ))
                                 }
                             </ul>
@@ -79,33 +96,11 @@ const Categories = ()=>{
                
                     
                    
-            </div>
-            
-            {/* <div class="subnavContents activeContent" id="skills"> 
-                <ul>
-                    <li><span>Software Development</span> <br/> Developing solution-specific Desktop and Web Applications </li>
-                    <li><span>Cloud Computing</span> <br/> Developing cloud-based Web and API applications </li>
-                </ul>
-            </div>
-            <div class="subnavContents" id="experience"> 
-            <ul>
-                <li><span>Software Development</span> <br/> Developing solution-specific Desktop and Web Applications </li>
-                <li><span>Cloud Computing</span> <br/> Developing cloud-based Web and API applications </li>
-                <li><span>Software Development</span> <br/> Developing solution-specific Desktop and Web Applications </li>
-                <li><span>Cloud Computing</span> <br/> Developing cloud-based Web and API applications </li>
-            </ul>
-            </div>
-            <div class="subnavContents" id="education"> 
-                <ul>
-                    <li><span>Software Development</span> <br/> Developing solution-specific Desktop and Web Applications </li>
-                    <li><span>Cloud Computing</span> <br/> Developing cloud-based Web and API applications </li>
-                    <li><span>Software Development</span> <br/> Developing solution-specific Desktop and Web Applications </li>
-                    <li><span>Cloud Computing</span> <br/> Developing cloud-based Web and API applications </li>
-                    <li><span>Software Development</span> <br/> Developing solution-specific Desktop and Web Applications </li>
-                    <li><span>Cloud Computing</span> <br/> Developing cloud-based Web and API applications </li>
-                </ul>
-            </div> */}
-        
+            </div>    
+
+            <div>
+                    <Outlet/>
+            </div>    
         </>
     )
 

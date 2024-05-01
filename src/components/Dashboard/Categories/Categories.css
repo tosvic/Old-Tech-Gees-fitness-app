@@ -1,14 +1,15 @@
 
 .subnavTitles{
+  width: 400px;
   background-image: url(./images/skillLevel.png);
   background-size:250px;
   background-repeat: no-repeat;
   background-position-x: center;
-    margin-right: 15px;
-    padding-top: 5px;
-    border-radius: 10px;
-    box-shadow:  2px 2px 17px 10px var(--sidebar-background) ;
-    display: flex;
+  margin-right: 15px;
+  padding-top: 5px;
+  border-radius: 10px;
+  box-shadow:  2px 2px 17px 10px var(--sidebar-background) ;
+  display: flex;
   }
 #subnavlinks{
   text-align: center;

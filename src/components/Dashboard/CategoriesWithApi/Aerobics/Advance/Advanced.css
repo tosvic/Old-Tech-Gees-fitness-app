@@ -1,0 +1,20 @@
+.videoFeedsContainer{
+    display: flex;
+}
+.item{
+    margin: 10px;
+    padding: 5px;
+}
+.giffs{
+    width: 200px;
+}
+.modal{
+    display: flex;
+}
+.immodal{
+    display: none;
+}
+.youtube{
+    border-radius: 15px;
+
+}

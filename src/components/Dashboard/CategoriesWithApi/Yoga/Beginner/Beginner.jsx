@@ -2,23 +2,31 @@ import React, {useState, useEffect } from "react";
 import TopNav from "../../../navigations/top/TopNav";
 import SideNav from "../../../navigations/side/SideNav";
 import './Beginner.css';
+import { Link } from "react-router-dom";
 import '../../../navigations/side/sidenav.css'
 import '../../../navigations/top/topNav.css'
 import { CiPlay1 } from "react-icons/ci";
 import ModalOne from "./ModalOne";
 
 const Beginner =()=>{
-    const [data, setData] = useState(null)
+    const [data, setData] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [error, setrError] = useState(null)
+    const [show, setShow] = useState([]);
 
-    const [showModal, setShowModal] = useState(false);
-
-    const toggleModal =(id)=>{
-        // setShowModal(id);
-        setShowModal(!showModal);
+    const toggleModal =(i)=>{
+        
+        const temp = []
+        for (let index = 0; index < data.length; index++) {
+            if(index == i) temp.push(!show[i])
+            else temp.push(show[i])
+        }
+        setShow(temp)
+        console.log(temp)
     };
 
+    
+    
 
     useEffect(()=>{
 
@@ -48,15 +56,23 @@ const Beginner =()=>{
                     throw new Error ("Error 404: Resource not found");
                 }
                 const jsonedData = await response.json();
-                console.log(jsonedData);
+                // console.log(jsonedData);
                 setData(jsonedData);
+                    const temp = [true]
+                    for (let index = 1; index < jsonedData.length; index++) {
+                        temp.push(false)
+                    } 
+                    setShow(temp)
                 setIsLoading(false);
             } catch(error){
                 setrError(error);
                 setIsLoading(false);
             }
         };
+
+
         fetchData();
+        
         // console.log(fetchData())
     }, []);
     if (isLoading){
@@ -81,21 +97,40 @@ const Beginner =()=>{
                 {
                     data &&(
                         <div className="videoFeedsContainer">
-                            {data?.map((item, i) =>{
-                                if (i < 5){
-                                return  <div className="item">
+                            {data?.map((item, index) =>{
+                                if (index < 5){
+                                return(  
+                                <div className="item" key={item.id}>
                                     
-                                    <button className="playButton" onClick={()=>toggleModal((data[i].id))}> {CiPlay1} &times; </button>
-                                    <ModalOne show={showModal} handleClose={()=>toggleModal((data[i].id))}/>
-                                        <div className="bannerSection">
-                                            <img src={data[i].gifUrl} alt="This is a giff"  className="giffs"/>
-                                        </div>
-                                            <div className="details">
-                                                <h4>Name: {data[i].name}</h4>
-                                                <h4>equipment:  {data[i].equipment}</h4>
-                                                <h4>Instructions: {data[i].instructions}</h4>
-                                            </div>
-                                        </div>
+                                    {/* <button className="playButton" onClick={()=>toggleModal(index)}> {CiPlay1} &times; </button>
+                                    <ModalOne show={show[index]}/> */}
+                                    <div className="bannerSection">
+                                        <img src={data[index].gifUrl} alt="This is a giff"  className="giffs"/>
+                                    </div>
+                                    <div className="details">
+                                        <h4>Name: {data[index].name}</h4>
+                                        <h4>equipment:  {data[index].equipment}</h4>
+                                        <h4>Instructions: {data[index].instructions[0]}</h4>
+                                        {
+                                            index === 0 ? <Link to={'MainLayout/Yoga/Beginner/GymRoom/RoomOne'} smooth={true} > 
+                                            view all ....
+                                         </Link>
+                                            :(index === 1? <Link to={'MainLayout/Yoga/Beginner/GymRoom/RoomTwo'} smooth={true} > 
+                                                                view all ....
+                                                            </Link>
+                                            :  (index === 2 ? <Link to={'MainLayout/Yoga/Beginner/GymRoom/RoomThree'} smooth={true} > 
+                                                                    view all ....
+                                                                </Link>  
+                                            :  (index === 2 ? <Link to={'MainLayout/Yoga/Beginner/GymRoom/RoomFour'} smooth={true} > 
+                                                                    view all ....
+                                                                </Link>
+                                            :  (index === 2 ? <Link to={'MainLayout/Yoga/Beginner/GymRoom/RoomFive'} smooth={true} > 
+                                                                    view all ....
+                                                                </Link>: null))))
+                                        }
+                                    </div>
+                                </div>
+                                )
                                 } else{
                                     return <></>
                                 }

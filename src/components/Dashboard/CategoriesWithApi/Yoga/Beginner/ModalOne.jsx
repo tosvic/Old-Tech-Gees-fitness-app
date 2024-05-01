@@ -3,11 +3,9 @@ import React from "react";
 import './Modal.css'
 
 
-const  ModalOne =({ handleClose, show})=>{
+const  ModalOne =({show})=>{
 
     const showHideClassName = show ? 'modal display-block':'immodal display-none';
-
-    
 
     return(
         <>

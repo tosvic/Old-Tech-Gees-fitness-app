@@ -1,0 +1,28 @@
+
+.nonModal{
+    display: block;
+}
+.noDisplaySlideRIght{
+    margin-right:-195px;
+    opacity:0;
+    transition-property: margin-right;
+    transition: 1s ease  ;
+}
+.displaySlideRIght{
+    margin-right: 2px;
+    opacity:0;
+    transition-property: margin-right;
+    transition: 1s ease  ;
+}
+.displaySlideLeft{
+    margin-left:3px;
+    opacity:0;
+    transition-property: margin-left;
+    transition: 1s ease  ;
+}
+.noDisplaySlideLeft{
+    margin-left:3px;
+    opacity:0;
+    transition-property: margin-left;
+    transition: 1s ease  ;
+}

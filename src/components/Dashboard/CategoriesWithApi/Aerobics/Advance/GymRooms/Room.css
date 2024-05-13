@@ -1,0 +1,11 @@
+.RowOne{
+    display: flex;
+    /* border: 1px solid white; */
+}
+.item{
+    padding: 5px;
+    text-wrap: balance;
+}
+.instructionSets{
+    margin-left: 35px;
+}

@@ -1,0 +1,11 @@
+
+.modal{
+    display: block;
+}
+.immodal{
+    display: none;
+}
+.youtube{
+    border-radius: 15px;
+
+}

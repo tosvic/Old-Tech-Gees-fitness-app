@@ -1,0 +1,17 @@
+.loginFormContainer{
+height: 100vh;
+/* width: 100%; */
+}
+.input-bg-color{
+    background-color: rgba(233, 237, 241, 0.945);
+    width: 70%;
+}
+.logBtn{
+    text-align: center;
+    border-radius: 30px;
+    width: 70%;
+    height: 7%;
+    position: absolute;
+    top: 90%;
+    left: 15%;
+}

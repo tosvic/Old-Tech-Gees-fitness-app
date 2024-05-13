@@ -1,0 +1,101 @@
+/* //This is the movie banner */
+.dailyWorkoutContainer{
+    padding: 10px;
+    width: 500px;
+    /* border: 1px solid white; */
+}
+.dailyWorkoutContainer .Title{
+    display:  flex;
+    width: 345px;
+    justify-content:space-between;
+    align-items: center;
+    padding: 5px;
+    /* border:  1px solid white; */
+    /* margin-bottom:  */
+}
+.DailyWorkoutbanner{
+    position: relative;
+    /* display:  inline-block; */
+    width: 369px;
+    margin-left: -10px;
+    height: 200px;
+    /* padding: 5px; */
+    /* border:  1px solid white; */
+} 
+.DailyWorkoutbanner .imageBanner{
+    border-radius: 25px;
+    width: 500px;
+
+}
+.DailyWorkoutbanner .tests{
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(241, 3, 3, 0), rgba(8, 64, 73, 0.021),rgba(0, 0, 0, 0.63));
+    border-radius: 25px;
+    color: black;
+}    
+.tests .dayOne{
+    position: relative;
+    left: 5%;
+    top: 75%;
+    font-weight: 700;
+    color: #ffffff;
+    /* margin-bottom: 5px; */
+}
+.tests .time{
+    position: relative;
+    left: 5%;
+    top: 75%;
+    color: var( --color-iconBackgroung);
+}
+.playvideo{
+    position: relative;
+    padding-left: 16px;
+    left: 40%;
+    top: 15%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
+    /* border: none; */
+}
+.playvideo:hover {
+    background: var(--color-button);
+    font-weight: 600;
+    border: 2px solid white;
+} 
+.videoContainer{
+    margin-left: 10px;
+    width: 360px;
+    height: 210px;
+    /* border: 2px solid white; */
+    padding-right: 20px;
+    padding-top: 20px;
+    /* margin-right: 50px; */
+}
+video{
+    width: 500px;
+    height: 400px;
+    margin-left: -17px;
+    /* border-radius: 35px;
+    padding-top: 5px;
+    padding-right: 5px; */
+}
+
+
+
+
+
+
+/* //THis is the graph box */
+
+.ChartDiv{
+    width: 390px;
+}
+button{
+    margin: 10px;
+}

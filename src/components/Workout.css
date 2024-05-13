@@ -1,0 +1,37 @@
+ body{
+    background-color: #011639;
+    display: flex;
+}
+
+  h1{
+    color: #BFC6CF;
+  }
+
+ .Button {
+    background-color: #052b6e5e;
+    color: #BFC6CF;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    width: 350px; 
+    border-radius: 5px;
+  }
+
+  .workout-buttons {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .workout-buttons:hover{
+    color: #137AF7;
+  }
+
+
+
+  @media only screen and (max-width: 768px) {
+    .button {
+      width: 100%; 
+    }
+  }

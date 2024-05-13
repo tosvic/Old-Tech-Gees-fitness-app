@@ -1,0 +1,21 @@
+.textSlider{
+    width:  100%;
+    height: 50px;
+    overflow: hidden;
+}
+.textSlide{
+    display: none;
+    animation: slideIn 0.5s ease forwards;
+}
+.textSlide.active{
+    display: block;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
